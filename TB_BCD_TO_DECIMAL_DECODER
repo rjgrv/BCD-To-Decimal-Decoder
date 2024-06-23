@@ -1,0 +1,30 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+entity TB_BCD_TO_DECIMAL_DECODER is
+end TB_BCD_TO_DECIMAL_DECODER;
+architecture Dataflow of TB_BCD_TO_DECIMAL_DECODER is
+component BCD_TO_DECIMAL_DECODER is port(
+	A: in STD LOGIC;
+	B: in STD LOGIC:
+	C: in STD LOGIC;
+	D: in STD LOGIC;
+	DO, D1, D2, D3, D4, D5, D6, D7, D8, D9: out STD LOGIC):
+end component;
+signal A, B, C, D, DO, D1, D2, D3, D4, D5, D6, D7, D8, D9: STD_LOGIC;
+begin
+uut: BCD_TO_DECIMAL_DECODER port map
+(A => A, B =>  B,C => C, D => D, DO => DO, D1 => D1, D2 => D2, D3 => D3, D4 => D4, D5 => D5, D6 => D6, D7 => D7, D8 => D8, D9 => D9);
+stimulas: process
+begin 
+A <= '0'; B <= '0'; C <= '0'; D <= '0'; wait for lûns;
+A <= '0'; B <= '0'; C <= '0'; D <= '1'; wait for lûns;
+A <= '0'; B <= '0'; C <= '1'; D <= '0'; wait for lûns;
+A <= '0'; B <= '0'; C <= '1'; D <= '1'; wait for lûns;
+A <= '0'; B <= '1'; C <= '0'; D <= '0'; wait for lûns;
+A <= '0'; B <= '1'; C <= '0'; D <= '1'; wait for lûns;
+A <= '0'; B <= '1'; C <= '1'; D <= '0'; wait for lûns;
+A <= '0'; B <= '1'; C <= '1'; D <= '1'; wait for lûns;
+A <= '1'; B <= '0'; C <= '0'; D <= '0'; wait for lûns;
+A <= '1'; B <= '0'; C <= '0'; D <= '1'; wait for lûns;
+end process;
+end Dataflow;
